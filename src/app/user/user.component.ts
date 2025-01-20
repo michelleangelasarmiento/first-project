@@ -19,7 +19,7 @@ export class UserComponent {
   @Input({required: true}) id!: string;
   @Input({required: true}) photo!: string;
   @Input({ required: true }) name!: string;
-  @Output() click = new EventEmitter();
+  @Output() click = new EventEmitter<string>();
 
   get imgPath(){
     return 'assets/users/'+ this.photo;
