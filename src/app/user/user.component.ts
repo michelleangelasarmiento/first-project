@@ -1,8 +1,12 @@
 import { Component,computed,Input,signal,Output, EventEmitter } from '@angular/core';
 
-import {DUMMY_USERS} from '../dummy-users'
+interface User 
+{
+    id: string;
+    photo: string;
+    name: string;
+  };
 
-const randomIndex = Math.floor(Math.random()* DUMMY_USERS.length);
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -16,19 +20,17 @@ export class UserComponent {
 
   // photo= input<string>(); /*input signal*/
   //click=output<string>();
-  @Input({required: true}) id!: string;
-  @Input({required: true}) photo!: string;
-  @Input({ required: true }) name!: string;
+  @Input({ required: true }) user!: User;
   @Output() click = new EventEmitter<string>();
 
   get imgPath(){
-    return 'assets/users/'+ this.photo;
+    return 'assets/users/'+ this.user.photo;
   }
 
   onSelectUser(){
     // const randomIndex = Math.floor(Math.random()* DUMMY_USERS.length);
     // this.selectedUser.set(DUMMY_USERS[randomIndex]);/*updating signal value, you then call it as a function*/
-    this.click.emit(this.id);
+    this.click.emit(this.user.id);
   }
 
 }

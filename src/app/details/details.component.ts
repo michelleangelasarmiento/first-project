@@ -8,6 +8,6 @@ import { Component, Input} from '@angular/core';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
-  @Input({required: true}) name!: string;
+  @Input() name?: string;
 
 }
