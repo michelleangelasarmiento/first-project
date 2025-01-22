@@ -9,10 +9,14 @@
         </li>
         }
       </ul>
-   
-     <app-details [userId]="selectedUser.id" [name]="selectedUser? selectedUser.name: ''" />
-      
-      
+    <!-- @if(selectedUser){
+          <app-details [userId]="selectedUser.id" [name]="selectedUser.name" />
+    }@else {
+      <p id="fallback">Select to view user's task</p>
+    } -->
+
+    <app-details [userId]="selectedUser.id" [name]="selectedUser.name"></app-details>
+            
 </main>
 
  
