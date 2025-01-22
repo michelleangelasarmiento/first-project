@@ -10,8 +10,8 @@ import { TaskComponent } from './task/task.component';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
-  @Input({required:true}) name!: string;
-  @Input() userId?: string;
+  @Input() name?: string;
+  @Input() userId!: string;
 
   tasks = [
     {
@@ -42,7 +42,6 @@ export class DetailsComponent {
 
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
-    console.log(this.userId)
     
   }
 

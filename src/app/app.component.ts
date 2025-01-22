@@ -9,7 +9,7 @@ import { DetailsComponent } from './details/details.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [HeaderComponent, UserComponent,DetailsComponent]
+    imports: [HeaderComponent, UserComponent, DetailsComponent]
 })
 export class AppComponent {
     users = DUMMY_USERS;
