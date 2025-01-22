@@ -45,4 +45,9 @@ export class DetailsComponent {
     
   }
 
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+    
+  }
+
 }

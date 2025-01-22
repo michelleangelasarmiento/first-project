@@ -15,7 +15,8 @@ export class UserComponent {
 
   // photo= input<string>(); /*input signal*/
   //click=output<string>();
-  @Input({required:true}) user!: User;
+  @Input({ required: true }) user!: User;
+  @Input({ required: true }) selected!: boolean;
   @Output() click = new EventEmitter<string>();
 
   get imgPath(){
