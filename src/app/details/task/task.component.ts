@@ -17,4 +17,5 @@ export class TaskComponent {
     this.completed.emit(this.task.id);
   }
 
+
 }
